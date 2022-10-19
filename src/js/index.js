@@ -29,9 +29,17 @@ newTab.click(() => {
                                 <input type="text" class="form-control form-control-sm" id="fieldValue-${id}" placeholder="Value">
                             </div>
                         </div>
+                        <button id="remove-${id}" class="btn btn-danger">Remove</button>
                     </div>`);
 
     const navLink = $(`#navLink-${id}`);
     //navLink.addClass('active');
     navLink.tab('show');
+
+    $('#remove-' + id).click(() => {
+        $('#navLink-' + id).parent().remove();
+        $('#tab-' + id).remove();
+
+        $('.nav-link').first().tab('show');
+    });
 });
