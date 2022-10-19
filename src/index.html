@@ -18,14 +18,14 @@
             <form>
                 <div id="webhookSelector">
                     <label for="webhookSelect">Webhook</label>
-                    <select class="form-control" id="webhookSelect"></select>
-                    <button class="btn btn-primary">Add</button>
+                    <select class="form-control" id="webhookSelect" required></select>
+                    <button id="addWebhook" class="btn btn-primary">Add</button>
                 </div>
 
                 <div class="form-group row">
                     <label for="username" class="col-sm-2 col-form-label">Username</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control form-control-sm" id="username" placeholder="Username">
+                        <input type="text" class="form-control form-control-sm" id="username" placeholder="Username" required>
                     </div>
                     <label for="avatar" class="col-sm-2 col-form-label">Avatar URL</label>
                     <div class="col-sm-4">
@@ -51,9 +51,9 @@
                     <div class="col-sm-3">
                         <input type="url" class="form-control form-control-sm" id="authorURL" placeholder="Author URL">
                     </div>
-                    <label for="iconURL" class="col-sm-1 col-form-label">Icon</label>
+                    <label for="authorIcon" class="col-sm-1 col-form-label">Icon</label>
                     <div class="col-sm-3">
-                        <input type="url" class="form-control form-control-sm" id="iconURL" placeholder="Icon URL">
+                        <input type="url" class="form-control form-control-sm" id="authorIcon" placeholder="Icon URL">
                     </div>
                 </div>
 

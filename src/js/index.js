@@ -1,3 +1,7 @@
+$('#addWebhook').click(() => {
+    ipc.send('add_webhook');
+});
+
 const fieldTabs = $('#fieldsTab');
 const fieldTabContent = $('#fieldTabContent');
 const newTab = $('#newTab');
@@ -12,7 +16,7 @@ newTab.click(() => {
             <a id="navLink-${id}" class="nav-link" data-toggle="tab" href="#tab-${id}">Field ${id}</a>
         </li>`).insertBefore(newTab.parent());
 
-    fieldTabContent.append(`<div class="tab-pane fade show" id="tab-${id}" role="tabpanel" aria-labelledby="tab-${id}">
+    fieldTabContent.append(`<div class="tab-pane fade show field" id="tab-${id}" data-id="${id}" role="tabpanel" aria-labelledby="tab-${id}">
                         <div class="form-group row">
                             <label for="fieldName-${id}" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-8">
@@ -33,7 +37,6 @@ newTab.click(() => {
                     </div>`);
 
     const navLink = $(`#navLink-${id}`);
-    //navLink.addClass('active');
     navLink.tab('show');
 
     $('#remove-' + id).click(() => {
@@ -42,4 +45,37 @@ newTab.click(() => {
 
         $('.nav-link').first().tab('show');
     });
+});
+
+$('#reset').click(() => {
+    location.reload();
+});
+
+$('#send').click(() => {
+    const webhook = $('#webhookSelect').val();
+    const username = $('#username').val();
+    const avatar = $('#avatar').val();
+    const content = $('#content').val();
+    const author = $('#authorName').val();
+    const authorURL = $('#authorURL').val();
+    const authorIcon = $('#authorIcon').val();
+    const title = $('#title').val();
+    const color = $('#color').val();
+    const description = $('#description').val();
+    const image = $('#image').val();
+    const thumbnail = $('#thumbnail').val();
+    const footer = $('#footer').val();
+    const footerIcon = $('#footerIcon').val();
+    const fields = [];
+
+    $('.field').each((i, field) => {
+        const id = $(field).attr('data-id');
+        fields.push({
+            name: $('#fieldName-' + id).val(),
+            value: $('#fieldValue-' + id).val(),
+            inline: $('#fieldInline-' + id).is(':checked')
+        });
+    });
+
+    //TODO Create json and post it to the webhook
 });
