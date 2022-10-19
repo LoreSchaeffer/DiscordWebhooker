@@ -45,3 +45,7 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+ipc.on('add_webhook', () => {
+
+}
