@@ -1,0 +1,18 @@
+body {
+    background-color: var(--less-dark-gray);
+    color: white;
+}
+
+form {
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+#btns {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

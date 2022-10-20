@@ -1,3 +1,6 @@
+const {ipcRenderer} = require('electron');
+const ipc = ipcRenderer;
+
 $('#addWebhook').click(() => {
     ipc.send('add_webhook');
 });

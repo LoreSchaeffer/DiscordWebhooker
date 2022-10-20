@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Webhook</title>
+    <link rel="stylesheet" href="css/libs/bootstrap/bootstrap-dark.min.css"/>
+    <link rel="stylesheet" href="css/global.css"/>
+    <link rel="stylesheet" href="css/add_webhook.css"/>
+</head>
+<body>
+<div class="container-fluid">
+    <form>
+        <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label">Webhook Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control form-control-sm" id="name" placeholder="Webhook Name" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="url" class="col-sm-3 col-form-label">Webhook URL</label>
+            <div class="col-sm-9">
+                <input type="url" class="form-control form-control-sm" id="url" placeholder="Webhook URL" required>
+            </div>
+        </div>
+
+        <div id="btns">
+            <button id="cancel" class="btn btn-danger">Cancel</button>
+            <button id="Add" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+</div>
+
+<script>window.$ = window.jQuery = require('jquery');</script>
+<script src="js/libs/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="js/add_webhook.js"></script>
+</body>
+</html>
